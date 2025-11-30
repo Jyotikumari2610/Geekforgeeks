@@ -94,3 +94,52 @@ class Solution {
         obj.findPattern(s,p);
     }
 }
+
+//Given an integer s. Write a program to print the Right angle triangle wall. The length of perpendicular and base is s. Note: Print exactly single " " after "*". Print a new line after printing the triangle.
+
+// User function Template for Java
+import java.util.*;
+class Solution {
+    public static void triangleWall(int s) {
+        // Write your code here
+        for(int i=0;i<=s;i++){
+            for(int j=0;j<i;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int s=sc.nextInt();
+        Solution obj=new Solution();
+        obj.triangleWall(s);
+    }
+}
+
+//Complete the function relationalOperators() that compares two integers a and b. Print: "a is greater than b" if a is greater than b "a is less than b" if a is less than b "a is equal to b" if a equals b Each output should be followed by a newline character.\
+
+// User function Template for Java
+import java.util.*;
+class Solution {
+    static void relationalOperators(int A, int B) {
+        // code here
+        if(A>B){
+            System.out.println(+A+" is greater than "+B);
+        }
+        else if(B>A){
+            System.out.println(+A+" is less than "+B);
+        }
+        else {
+            System.out.println(+A+" is equal to "+B);
+        }
+        
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int A=sc.nextInt();
+        int B=sc.nextInt();
+        Solution obj=new Solution();
+        obj.relationalOperators(A,B);
+    }
+}
