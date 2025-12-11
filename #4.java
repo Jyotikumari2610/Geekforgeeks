@@ -71,3 +71,25 @@ class Solution {
          System.out.println(Solution.sumUsingStreams(arr));
     }
 }
+//You are given an array of integers arr[]. You have to reverse the given array.Note: Modify the array in place.
+import java.util.*;
+class Solution {
+    public void reverseArray(int arr[]) {
+        // code here
+        int rev=0;
+        for(int i=arr.length-1;i>=0;i--){
+            rev=arr[i];
+        }
+        System.out.print(rev);
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Solution obj=new Solution();
+        obj.reverseArray(arr);
+    }
+}
