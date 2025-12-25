@@ -149,3 +149,67 @@ class Solution {
         obj.computeGCD(a,b);
     }
 }
+class Solution {
+    public int getMinDiff(int[] arr, int k) {
+        // code here
+        int n=arr.length;
+        Arrays.sort(arr);
+        int ans=arr[n-1]-arr[0];
+        int smallest=arr[0]+k;
+        int largest=arr[n-1]-k;
+        if(smallest>largest){
+            int temp=smallest;
+            smallest=largest;
+            largest=temp;
+        }
+        for(int i=1;i<n-1;i++){
+            int minVal=Math.min(smallest,arr[i]-k);
+            int maxVal=Math.max(largest,arr[i]+k);
+            if (minVal<0)
+            continue;
+            
+            ans=Math.min(ans,maxVal-minVal);
+        }
+          /*  int subtract=arr[i]-k;
+            int add=arr[i]+k;
+            
+            if(subtract>=smallest || add<=largest)
+            continue;
+            
+            if(largest-subtract<=add-smallest){
+                smallest=subtract;
+            }
+            else{
+                largest=add;
+            }
+        }
+        return Math.min(ans, largest-smallest);
+        */
+        return ans;
+    }
+    public static void main(String args[]){
+        int k=2;
+        int arr[]={3,9,7,5,8,10};
+        Solution obj=new Solution();
+        obj.getMinDiff(arr,k);
+    }
+}
+
+class Solution {
+    public int maximumProfit(int prices[]) {
+        // code here
+        int profit=0;
+        
+        for(int i=1;i<prices.length;i++){
+            if(prices[i]>prices[i-1]){
+                profit +=prices[i]-prices[i-1];
+            }
+        }
+        return profit;
+    }
+    public static void main(String args[]){
+        int prices[]={345,876,896,342,121,554};
+        Solution obj=new Solution();
+        obj.maximumProfit(prices);
+    }
+}
