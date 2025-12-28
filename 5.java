@@ -77,3 +77,65 @@ class Solution {
         obj.maxProduct(arr);
     }
 }
+//You are given an integer array arr[]. Your task is to find the smallest positive number missing from the array.
+class Solution {
+    public int missingNumber(int[] arr) {
+        // code here
+        int n=arr.length;
+        for(int i=0;i<n;i++){
+            if(arr[i]<=0||arr[i]>n){
+                arr[i]=n+1;
+            }
+        }
+        for(int i=0;i<n;i++){
+            int val=Math.abs(arr[i]);
+            if(val>=1 && val<=n){
+                if(arr[val-1]>0){
+                    arr[val-1]=-arr[val-1];
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]>0){
+                return i+1;
+            }
+        }
+        return n+1;
+    }
+    public static void main(String args[]){
+        int arr[]={4,7,5,2,1,3,8,9};
+        Solution obj=new Solution();
+        obj.missingNumber(arr);
+    }
+}
+
+//You are given a circular array arr[] of integers, find the maximum possible sum of a non-empty subarray. In a circular array, the subarray can start at the end and wrap around to the beginning. Return the maximum non-empty subarray sum, considering both non-wrapping and wrapping cases.
+class Solution {
+    public int maxCircularSum(int arr[]) {
+        // code here
+        int n=arr.length;
+        int sum=0;
+        int maxEnd=arr[0], maxFar=arr[0];
+        int minEnd=arr[0], minFar=arr[0];
+        for(int i=0;i<n;i++){
+            sum += arr[i];
+             
+             if(i>0){
+                 maxEnd=Math.max(arr[i], maxEnd+arr[i]);
+                 maxFar=Math.max(maxFar, maxEnd);
+                 
+                 minEnd=Math.min(arr[i],minEnd+arr[i]);
+                 minFar=Math.min(minFar, minEnd);
+             }
+        }
+        if(maxFar<0){
+            return maxFar;
+        }
+        return Math.max(maxFar,sum-minFar);
+    }
+    public static void main(String args[]){
+        int arr[]={56,87,32,15,89,65,81};
+        Solution obj=new Solution();
+        obj.maxCircularSum(arr);
+    }
+}
