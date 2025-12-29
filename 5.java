@@ -139,3 +139,30 @@ class Solution {
         obj.maxCircularSum(arr);
     }
 }
+
+//Given two sorted arrays a[] and b[] and an element k, the task is to find the element that would be at the kth position of the combined sorted array.
+class Solution {
+    public int kthElement(int a[], int b[], int k) {
+        // code here
+        int m=a.length;
+        int n=b.length;
+        int c[]=new int[m+n];
+        int idx=0;
+        for(int i=0;i<m;i++){
+            c[idx++]=a[i];
+        }
+        for(int i=0;i<n;i++){
+            c[idx++]=b[i];
+        }
+      Arrays.sort(c);
+      return c[k-1];
+    }
+    public static void main(String args[]){
+        int a[]={1,7,9,5,4,2};
+        int b[]={8,3,6,0};
+        int k=3;
+        Solution obj=new Solution();
+        obj.kthElement(a,b,k);
+        
+    }
+}
