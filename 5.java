@@ -166,3 +166,46 @@ class Solution {
         
     }
 }
+//Given an array arr[] of distinct elements, which was initially sorted in ascending order but then rotated at some unknown pivot, the task is to find the index of a target key.  If the key is not present in the array, return -1.
+class Solution {
+    int search(int[] arr, int key) {
+        // code here
+        int n=arr.length;
+        for(int i=0;i<n;i++){
+            if(arr[i]==key){
+            return i;
+        }}
+      return -1;
+    }
+    public static void main(String args[]){
+        int arr[]={7,9,5,3,1,8,6,4,2};
+        int key=3;
+        Solution obj=new Solution();
+        obj.search(arr,key);
+    }
+}
+
+//You are given an array arr[] where no two adjacent elements are same, find the index of a peak element. An element is considered to be a peak if it is greater than its adjacent elements (if they exist).
+
+class Solution {
+    public int peakElement(int[] arr) {
+        // code here
+        int low=0;
+        int high=arr.length-1;
+        while(low<high){
+            int mid=low+(high-low)/2;
+            if(arr[mid]>arr[mid+1]){
+                high=mid;
+            }
+            else{
+                low=mid+1;
+            }
+        }
+        return low;
+    }
+    public static void main(String args[]){
+        int arr[]={3,5,7,8,4,9};
+        Solution obj=new Solution();
+        obj.peakElement(arr);
+    }
+}
