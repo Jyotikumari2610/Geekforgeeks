@@ -38,3 +38,50 @@ class Solution {
       obj.countFreq(arr,target);
     }
 }
+
+//Given a string s consisting of lowercase English Letters. return the first non-repeating character in s. If there is no non-repeating character, return '$'.
+class Solution {
+    public char nonRepeatingChar(String s) {
+        // code he(re
+       int n=s.length();
+        for(int i=0;i<n;i++){
+          char ch=s.charAt(i);
+          if(s.indexOf(ch)==s.lastIndexOf(ch)){
+              return ch;
+          }
+        }
+     return '$';
+    }
+    public static void main(String args[]){
+        String s="JyotiJKS";
+        Solution obj=new Solution();
+        obj.nonRepeatingChar(s);
+    }
+}
+
+//Given two non-empty strings s1 and s2, consisting only of lowercase English letters, determine whether they are anagrams of each other or not.
+//Two strings are considered anagrams if they contain the same characters with exactly the same frequencies, regardless of their order.
+class Solution {
+    public static boolean areAnagrams(String s1, String s2) {
+        // code here
+        if(s1.length()!=s2.length())
+        return false;
+        int freq[]=new int[26];
+        for(int i=0;i<s1.length();i++){
+            freq[s1.charAt(i)-'a']++;
+            freq[s2.charAt(i)-'a']--;
+        }
+        for(int i=0;i<freq.length;i++){
+            if(freq[i]!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String args[]){
+        String s1="Jyoti";
+        String s2="Iotyj";
+        Solution obj=new Solution();
+        obj.areAnagrams(s1,s2);
+    }
+}
