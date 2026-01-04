@@ -85,3 +85,40 @@ class Solution {
         obj.areAnagrams(s1,s2);
     }
 }
+
+//ou are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+class Solution {
+    public boolean areRotations(String s1, String s2) {
+        // code here
+        int n=s1.length();
+        for(int i=0;i<n;i++){
+            if(s1.equals(s2)){
+                return true;
+            }
+            char last=s1.charAt(s1.length()-1);
+            s1=last+s1.substring(0,s1.length()-1);
+        }
+        return false;
+    }
+    public static void main(String args[]){
+        String s1="abcd";
+        String s2="bcda";
+        Solution obj=new Solution();
+        obj.areRotations(s1,s2);
+    }
+}
+import java.util.*;
+class Main {
+      public  static boolean areEqual(String s1,String s2){
+        if(s1.length()!=s2.length())
+        return false;
+       String s1s1=s1+s1;
+       return s1s1.contains(s2);
+    }
+     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        System.out.println(areEqual(s1,s2));
+}
+}
