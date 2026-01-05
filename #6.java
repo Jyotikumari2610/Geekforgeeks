@@ -122,3 +122,49 @@ class Main {
         System.out.println(areEqual(s1,s2));
 }
 }
+
+//Given an array of integers arr[]  and a number k. Return the maximum sum of a subarray of size k.
+class Solution {
+    public int maxSubarraySum(int[] arr, int k) {
+        // Code here
+        int sum=0;
+        for(int i=0;i<k;i++){
+            sum +=arr[i];
+        }
+        int maxfar=sum;
+        for(int i=k;i<arr.length;i++){
+           sum=sum+arr[i]-arr[i-k];
+            maxfar=Math.max(maxfar,sum);
+        }
+      return maxfar;
+    }
+    public static void main(String args[]){
+        int arr[]={8,9,6,5,3,7,2,9};
+        int k=4;
+        Solution obj=new Solution();
+        obj.maxSubarraySum(arr,k);
+    }
+}
+
+//ou are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+class Solution {
+    public boolean areRotations(String s1, String s2) {
+        // code here
+        int n=s1.length();
+        for(int i=0;i<n;i++){
+            if(s1.equals(s2)){
+                return true;
+            }
+            char last=s1.charAt(s1.length()-1);
+            s1=last+s1.substring(0,s1.length()-1);
+        }
+        return false;
+    }
+    public static void main(String args[]){
+        String s1="abcd";
+        String s2="bcda";
+        Solution obj=new Solution();
+        obj.areRotations(s1,s2);
+    }
+    
+}
