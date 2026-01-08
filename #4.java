@@ -53,6 +53,7 @@ public class Solution {
     }
 }
 
+
 //Given an integer array arr[]. The task is to find the sum of the array using streams.
 import java.util.*;
 class Solution {
@@ -71,6 +72,7 @@ class Solution {
          System.out.println(Solution.sumUsingStreams(arr));
     }
 }
+
 //You are given an array of integers arr[]. You have to reverse the given array.Note: Modify the array in place.
 import java.util.*;
 class Solution {
