@@ -192,3 +192,33 @@ class Solution {
         obj.kthMissing(arr,k);
     }
 }
+
+
+//Given two sorted arrays a[] and b[] of size n and m respectively, the task is to merge them in sorted order without using any extra space. Modify a[] so that it contains the first n elements and modify b[] so that it contains the last m elements.
+
+class Solution {
+    public void mergeArrays(int a[], int b[]) {
+        // code here
+        int n=a.length;
+        int m=b.length;
+        for(int i=0;i<n;i++){
+            if(a[i]>b[0]){
+                int temp=a[i];
+                a[i]=b[0];
+                b[0]=temp;
+                int first =b[0];
+                int k;
+                for(k=1;k<m&&b[k]<first;k++){
+                    b[k-1]=b[k];
+                }
+                b[k-1]=first;
+            }
+        }
+    }
+    public static void main(String args[]){
+        int a[]={4,8,9,7,6,5};
+        int b[]={3,7,1,5,2};
+        Solution obj=new Solution();
+        obj.mergeArrays(a,b);
+    }
+}
