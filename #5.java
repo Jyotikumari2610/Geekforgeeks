@@ -15,6 +15,7 @@ class Solution {
         Arrays.sort(arr);
        return arr[k-1];
     }
+    
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -31,8 +32,8 @@ class Solution {
     }
 }
 
-//You are given an integer array arr[]. You need to find the maximum sum of a subarray (containing at least one element) in the array arr[].
 
+//You are given an integer array arr[]. You need to find the maximum sum of a subarray (containing at least one element) in the array arr[].
 class Solution {
     int maxSubarraySum(int[] arr) {
         // Code here
