@@ -20,6 +20,7 @@ class Solution {
 }
 
 //Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[]. 
+
 class Solution {
     int countFreq(int[] arr, int target) {
         // code here
@@ -40,6 +41,7 @@ class Solution {
 }
 
 //Given a string s consisting of lowercase English Letters. return the first non-repeating character in s. If there is no non-repeating character, return '$'.
+
 class Solution {
     public char nonRepeatingChar(String s) {
         // code he(re
@@ -61,6 +63,7 @@ class Solution {
 
 //Given two non-empty strings s1 and s2, consisting only of lowercase English letters, determine whether they are anagrams of each other or not.
 //Two strings are considered anagrams if they contain the same characters with exactly the same frequencies, regardless of their order.
+
 class Solution {
     public static boolean areAnagrams(String s1, String s2) {
         // code here
@@ -86,7 +89,8 @@ class Solution {
     }
 }
 
-//ou are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+//you are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+
 class Solution {
     public boolean areRotations(String s1, String s2) {
         // code here
@@ -124,6 +128,7 @@ class Main {
 }
 
 //Given an array of integers arr[]  and a number k. Return the maximum sum of a subarray of size k.
+
 class Solution {
     public int maxSubarraySum(int[] arr, int k) {
         // Code here
@@ -146,7 +151,8 @@ class Solution {
     }
 }
 
-//ou are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+//you are given two strings s1 and s2, of equal lengths. The task is to check if s2 is a rotated version of the string s1.
+
 class Solution {
     public boolean areRotations(String s1, String s2) {
         // code here
